@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="container">
         <div className="content has-text-centered">
           <p style={{font: 'small'}}>
-            <strong>one-Budget</strong> by <a href="#" target="_blank">@oneBudget</a>. The source code is licensed
-            <a href="#">oneBudget</a>.
+            <strong>one-Budget</strong> by <a href="/" target="_blank">@oneBudget</a>. The source code is licensed
+            <a href="/">oneBudget</a>.
           </p>
         </div>
       </div>

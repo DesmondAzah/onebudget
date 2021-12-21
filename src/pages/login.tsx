@@ -19,7 +19,7 @@ async function loginUser(credentials: any) {
     }).catch(error => {
         console.log(error);
     });
-
+    console.log(response);
 }
 // @ts-ignore
 const Login = ({ setToken }) => {
@@ -35,6 +35,7 @@ const Login = ({ setToken }) => {
             password
         });
         // setToken(token);
+        console.log(token);
     }
     return (
       <>

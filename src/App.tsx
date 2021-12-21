@@ -14,6 +14,7 @@ import Footer from "./pages/footer";
 
 function App() {
     const [token, setToken] = useState();
+    console.log(token);
     return (
       <Router>
           <header>
