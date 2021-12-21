@@ -1,6 +1,5 @@
 import React from "react";
-import {Navbar} from  'react-bootstrap';
-import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, NavLogo} from "./navbar-elements"
+import {Nav, NavLink, Bars, NavBtn, NavBtnLink, NavLogo} from "./navbar-elements"
 
 const MyNavbar = () => {
   return (

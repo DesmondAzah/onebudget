@@ -2,12 +2,10 @@ import React from "react";
 import {
      Label,
     LoginWrapper,
-    SignInContent,
-    SignInInContainer,
-    SignSection, SubmitButton, UserNameInput
+    SignSection, UserNameInput
 } from "../components/form/forms-elements";
 import {NavLink} from "react-router-dom";
-import {Row,Col, Container, Button} from "react-bootstrap";
+import {Row,Col, Button} from "react-bootstrap";
 
 const ForgotPassword = () => {
     let email;

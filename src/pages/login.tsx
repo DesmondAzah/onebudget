@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import {
     Label,
     LoginWrapper, RemindMeCheckBox,
-    SignInContent,
-    SignInInContainer,
-    SignSection, SubmitButton, UserNameInput
+    SignSection, UserNameInput
 } from "../components/form/forms-elements";
 import {NavLink} from "react-router-dom";
 
