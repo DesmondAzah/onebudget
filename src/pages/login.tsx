@@ -38,8 +38,6 @@ const Login = ({ setToken }) => {
         });
         // setToken(token);
     }
-
-
     return (
       <>
           <SignSection>
