@@ -2,12 +2,11 @@ import React from "react";
 import {
     Label,
     LoginWrapper,
-    SignInContent,
-    SignInInContainer,
-    SignSection, SubmitButton,
+    SignSection,
     UserNameInput
 } from "../components/form/forms-elements";
 import {NavLink} from "react-router-dom";
+import {Row,Col, Container, Button} from "react-bootstrap";
 
 const Signup = () => {
     let email;
@@ -17,10 +16,14 @@ const Signup = () => {
     return (
         <>
             <SignSection>
-                <SignInInContainer>
-                    <SignInContent>
-                        <form>
-                            <LoginWrapper>
+                <Row>
+                    <Col lg={4} sm={12}>
+
+                    </Col>
+                    <Col lg={4} sm={12}>
+                        <Container>
+                            <form>
+                                <LoginWrapper>
                                   <span>
                                       <img
                                           src="../../onebudgetLog.png"
@@ -30,33 +33,37 @@ const Signup = () => {
                                           alt="One Budget"
                                       />
                                   </span>
-                                <h3>Welcome!!</h3>
-                                <p>Sign up on to oneBudget here </p>
-                                <br/>
-                                <Label>
-                                    <UserNameInput name={fullName} type={"text"} placeholder={"John Doe"}/>
-                                </Label>
-                                <Label>
-                                    <UserNameInput name={email} type={"text"} placeholder={"johndoe@email.com"}/>
-                                </Label>
-                                <Label>
-                                    <UserNameInput name={password} type={"password"} placeholder={"Password"}/>
-                                </Label>
-                                <Label>
-                                    <UserNameInput name={confirmPassword} type={"password"} placeholder={"Confirm Password"}/>
-                                </Label>
-                                <br/>
-                                <div>
-                                    <SubmitButton type={"submit"} value={"Sign Up"}>
-                                       Sign Up
-                                    </SubmitButton>
-                                </div>
-                                <span style={{"margin":"10px"}}>Already  have an account?  <NavLink to={'/login'}>Log In </NavLink></span>
+                                    <h3>Welcome!!</h3>
+                                    <p>Sign up on to oneBudget here </p>
+                                    <br/>
+                                    <Label>
+                                        <UserNameInput name={fullName} type={"text"} placeholder={"John Doe"}/>
+                                    </Label>
+                                    <Label>
+                                        <UserNameInput name={email} type={"text"} placeholder={"johndoe@email.com"}/>
+                                    </Label>
+                                    <Label>
+                                        <UserNameInput name={password} type={"password"} placeholder={"Password"}/>
+                                    </Label>
+                                    <Label>
+                                        <UserNameInput name={confirmPassword} type={"password"} placeholder={"Confirm Password"}/>
+                                    </Label>
+                                    <br/>
+                                    <div>
+                                        <Button variant="primary" type="submit">
+                                            Sign Up
+                                        </Button>
+                                    </div>
+                                    <span style={{"margin":"10px"}}>Already  have an account?  <NavLink to={'/login'}>Log In </NavLink></span>
 
-                            </LoginWrapper>
-                        </form>
-                    </SignInContent>
-                </SignInInContainer>
+                                </LoginWrapper>
+                            </form>
+                        </Container>
+
+                    </Col>
+                    <Col lg={4} sm={12}>
+                    </Col>
+                </Row>
             </SignSection>
 
 

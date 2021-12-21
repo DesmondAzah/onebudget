@@ -1,6 +1,8 @@
 import React from "react";
+import {Navbar} from  'react-bootstrap';
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, NavLogo} from "./navbar-elements"
-const Navbar = () => {
+
+const MyNavbar = () => {
   return (
       <>
 
@@ -17,12 +19,6 @@ const Navbar = () => {
                 </NavLink>
             </NavLogo>
             <Bars />
-                <NavMenu>
-                    {/*<NavLink to='/about-us' >*/}
-                    {/*    About*/}
-                    {/*</NavLink>*/}
-                </NavMenu>
-
             <NavBtn>
                 <NavLink to='/login' >
                 Sign In
@@ -36,4 +32,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MyNavbar;

@@ -7,13 +7,16 @@ import {
     SignSection, SubmitButton, UserNameInput
 } from "../components/form/forms-elements";
 import {NavLink} from "react-router-dom";
+import {Row,Col, Container, Button} from "react-bootstrap";
+
 const ForgotPassword = () => {
     let email;
     return (
       <>
           <SignSection>
-              <SignInInContainer>
-                  <SignInContent>
+              <Row>
+                  <Col lg={4} sm={12}/>
+                  <Col lg={4} sm={12}>
                           <form>
                               <LoginWrapper>
                                   <span>
@@ -32,16 +35,17 @@ const ForgotPassword = () => {
                                      <UserNameInput name={email} type={"text"} placeholder={"Email Address"} required/>
                                   </Label>
                                   <div>
-                                      <SubmitButton type={"submit"} value={"reset-password"}>
-                                         Continue
-                                      </SubmitButton>
+                                      <Button variant="primary" type="submit">
+                                          Continue
+                                      </Button>
                                   </div>
                                   <span style={{"margin":"10px"}}>Return back to?  <NavLink to={'/login'}>Log In page</NavLink></span>
 
                               </LoginWrapper>
                           </form>
-                  </SignInContent>
-              </SignInInContainer>
+                  </Col>
+                  <Col lg={4} sm={12}/>
+              </Row>
           </SignSection>
 
 

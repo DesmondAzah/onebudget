@@ -9,29 +9,34 @@ export const MyFirstDiv = styled.div`
     overflow: hidden;
   }
 `;
+export const MySecondDiv = styled.div`
+  background-color: #10bfef !important;
+  position: relative;
+
+
+  @media (min-width: 769px) {
+    overflow: hidden;
+  }
+`;
+export const MyThirdDiv = styled.div`
+  background-color: #efa110 !important;
+  position: relative;
+
+
+  @media (min-width: 769px) {
+    overflow: hidden;
+  }
+`;
 export const ContainerSection = styled.div`
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1440px;
+  //max-width: 1440px;
   padding: 2.75rem 2.5625rem 2.75rem 2.625rem;
-  @media (min-width: 769px)
- {
-  padding-bottom: 6.25rem;
-  padding-top: 5rem;
-  position: relative;
-  text-align: left;
-  z-index: 2;  
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1440px;
-    padding: calc(0.57143px + 7.7381vw) 8.4722222222%;
-}
   `;
 
 export const MainH1 = styled.h1`
   text-shadow: 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9;
-  margin-bottom: 0.75rem!important;
   color: #25384f!important;
   margin-left: auto;
   margin-right: auto;
@@ -39,9 +44,8 @@ export const MainH1 = styled.h1`
   z-index: 1;
   font-family: Gilroy Heavy,Arial,sans-serif;
   font-style: normal;
-  font-weight: 400;
   display: block;
-  font-size: 2em;
+  font-size: 1em;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
@@ -57,7 +61,6 @@ export const MainH1 = styled.h1`
   `;
 export const SecondDiv = styled.div`
   text-shadow: 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9, 0 0 7px #85c3e9;
-  margin-bottom: 2rem!important;
   
   @media (min-width: 769px) {
     margin-bottom: 2.25rem!important;
@@ -91,9 +94,11 @@ export const SecondDiv = styled.div`
   position: relative;
   z-index: 1;
   `;
-export const ImageDiv = styled.div`
-  margin-left: auto!important;
-  margin-right: auto!important;
-  max-width: 23.75rem!important;
-  padding-bottom: 1.6875rem;
+export const UnorderedList = styled.ul`
+  list-style-type: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
   `;
+

@@ -3,12 +3,24 @@ import styled from 'styled-components';
 export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
   padding: 0px 40px ;
+  box-shadow: 0px 0px 16.83px 0.17px rgb(0 0 0 / 5%);
+  -moz-box-shadow: 0px 0px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 0px 16.83px 0.17px rgb(0 0 0 / 5%);
+  -o-box-shadow: 0px 0px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0px 0px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
   `;
 
 export const SignSection = styled.section`
     display: block;
+    margin: 10px;
   `;
 export const SignInInContainer = styled.div`
   max-width: 1200px;

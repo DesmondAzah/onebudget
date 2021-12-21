@@ -35,8 +35,8 @@ export const NavLink = styled(Link)`
   &.active {
     color: #808080;
   }
-  .hover {
-    background-color: #002e5b;
+  &:hover {
+    background-color: #ffffff;
     color: darkorange;
   }
 `;
@@ -77,7 +77,7 @@ export const NavBtn = styled.nav`
   /* justify-content: flex-end;
   width: 100vw; */
   @media screen and (max-width: 768px) {
-    display: none;
+    display: flex;
   }
 ` ;
   
@@ -96,8 +96,8 @@ export const NavBtnLink = styled(Link) `
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #808080;
+    background-color: #ffffff;
+    color: darkorange;
   }
 `;
 export const NavLogo = styled.div`
