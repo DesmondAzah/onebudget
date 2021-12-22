@@ -7,42 +7,27 @@ import {
     SignSection, UserNameInput
 } from "../components/form/forms-elements";
 import {NavLink} from "react-router-dom";
-const userLogsInOptions = (username: any, password: any) => {
-// const formData = new FormData();
-    const formData = new URLSearchParams();
-    formData.append('username', username);
-    formData.append('password', password);
-    return (
-        {
-            method: 'POST',
-            headers: {
-                'Accept': '/*/',
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            body: formData.toString(),
-            json: true,
-        }
-    );
-};
+
 async function loginUser(credentials: any) {
-    const response = await fetch('https://unebudget.herokuapp.com/api/v1/login',
-        // {
-        // method: 'POST',
-        // mode: 'no-cors',
-        // headers: {
-        //     'Accept': '/*/',
-        //     'Content-Type': 'application/x-www-form-urlencoded',
-        // },
-        // body:  `username=${credentials.username}&password=${credentials.password}`
-        userLogsInOptions(credentials.username, credentials.password)
-    );
-    const responseJson = await response.json();
-    console.log('acces_token ', responseJson.access_token);
-    if (responseJson.error) {
-        console.error('error ', responseJson.error);
-    }
-    console.log('json ', responseJson);
-    return responseJson.access_token;
+    await fetch('https://unebudget.herokuapp.com/api/v1/login', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Accept': '/*/',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body:  `username=${credentials.username}&password=${credentials.password}`
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    }).then(data => {
+            /* process your data further */
+            console.log(data);
+        }).catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
 }
 // @ts-ignore
 const Login = ({ setToken }) => {
