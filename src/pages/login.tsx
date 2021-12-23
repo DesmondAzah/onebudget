@@ -9,23 +9,14 @@ import {
 import {NavLink} from "react-router-dom";
 
 async function loginUser(credentials: any) {
-    await fetch('https://unebudget.herokuapp.com/api/v1/login', {
+    return await fetch('https://unebudget.herokuapp.com/api/v1/login', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Accept': '/*/',
             'Content-Type': 'application/x-www-form-urlencoded',
         },
         body:  `username=${credentials.username}&password=${credentials.password}`
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
-        return response.json();
-    }).then(data => {
-            /* process your data further */
-            console.log(data);
-        }).catch(error => {
+    }).then(data => data.json()).catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
 }
@@ -42,8 +33,7 @@ const Login = ({ setToken }) => {
             username,
             password
         });
-        // setToken(token);
-        console.log(token);
+        setToken(token);
     }
     return (
       <>
