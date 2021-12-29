@@ -34,6 +34,7 @@ const Login = ({ setToken }) => {
             password
         });
         setToken(token);
+        window.location.href = "/dashboard";
     }
     return (
       <>

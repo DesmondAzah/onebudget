@@ -18,7 +18,7 @@ import AdminSidebar from "./components/sidebar/admin-sidebar";
 
 function App() {
     const { token, setToken } = useToken();
-    console.log(token);
+    // console.log(token);
     if(!token){
         return (
             <Router>
@@ -38,14 +38,15 @@ function App() {
     }
     return (
       <Router>
-          <header>
-          <AdminNavbar/>
+          <header/>
           <AdminSidebar/>
+          <main className={"content"}>
+          <AdminNavbar/>
           <Routes>
               <Route path="/dashboard" element={<Dashboard/>}/>
               <Route path="/transactions" element={<TransactionsReport/>}/>
           </Routes>
-          </header>
+          </main>
           <Footer/>
       </Router>
   );

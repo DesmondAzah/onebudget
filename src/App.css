@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 768px) {
+    .content {
+        margin-left: 260px;
+    }
+}
+ .content {
+     overflow: visible;
+     padding: 0 1rem 0 1rem;
+     transition: all 0.3s;
+ }
+ main {
+     overflow: hidden;
+ }
+ figcaption, figure, main {
+     display: block;
+     margin: 0;
+ }
+ *, *::before, *::after {
+     box-sizing: border-box;
+ }  main {
+        display: block;
+    }
