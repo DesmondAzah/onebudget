@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Label,
     LoginWrapper,
@@ -6,13 +6,31 @@ import {
     UserNameInput
 } from "../components/form/forms-elements";
 import {NavLink} from "react-router-dom";
-import {Row,Col, Container, Button} from "react-bootstrap";
+import {Row, Col, Container, Button, Spinner} from "react-bootstrap";
 
 const Signup = () => {
-    let email;
-    let password;
-    let confirmPassword;
-    let fullName;
+    const [username, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const [conPassword, setConfPassword] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [loginState, setLoginState] = useState("");
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        setLoading(true);
+        if(conPassword !== password){
+            setError("Passwords do not match");
+            setLoading(false);
+            return;
+        }else {
+
+        }
+
+    }
+
     return (
         <>
             <SignSection>
@@ -22,7 +40,7 @@ const Signup = () => {
                     </Col>
                     <Col lg={4} sm={12}>
                         <Container>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <LoginWrapper>
                                   <span>
                                       <img
@@ -35,18 +53,31 @@ const Signup = () => {
                                   </span>
                                     <h3>Welcome!!</h3>
                                     <p>Sign up on to oneBudget here </p>
-                                    <br/>
+                                    <p>
+                                        {loading ? (
+                                            <Spinner style={{"color":"blueviolet"}} animation={"border"}/>
+                                        ) : (
+                                            <span style={{"color":"red"}}>
+                                                {error ? (
+                                                    <span>{error}</span>
+                                                ) : (
+                                                    <span>{success}</span>
+                                                )}
+                                            </span>
+                                        )}
+                                    </p>
                                     <Label>
-                                        <UserNameInput name={fullName} type={"text"} placeholder={"John Doe"}/>
+                                        <UserNameInput onChange={e => setFullName(e.target.value)} type={"text"} placeholder={"John Doe"} required/>
                                     </Label>
                                     <Label>
-                                        <UserNameInput name={email} type={"text"} placeholder={"johndoe@email.com"}/>
+                                        <UserNameInput onChange={e => setUserName(e.target.value)} type={"text"} placeholder={"johndoe@email.com"} required/>
                                     </Label>
                                     <Label>
-                                        <UserNameInput name={password} type={"password"} placeholder={"Password"}/>
+                                        <UserNameInput onChange={e => setPassword(e.target.value)} type={"password"} placeholder={"Password"} required/>
                                     </Label>
                                     <Label>
-                                        <UserNameInput name={confirmPassword} type={"password"} placeholder={"Confirm Password"}/>
+
+                                        <UserNameInput onChange={e => setConfPassword(e.target.value)} type={"password"} placeholder={"Confirm Password"} required/>
                                     </Label>
                                     <br/>
                                     <div>

@@ -105,3 +105,14 @@ export const RemindMeCheckBox = styled.input`
   line-height: 1.5em;
   margin-top: 6px;
   `;
+export const Spinner = styled.div`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top-color: #6dabe4;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  `;

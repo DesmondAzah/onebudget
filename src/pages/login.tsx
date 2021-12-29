@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Container, Col, Button } from "react-bootstrap";
+import {Row, Container, Col, Button, Spinner} from "react-bootstrap";
 import PropTypes from "prop-types";
 import {
     Label,
@@ -24,11 +24,13 @@ async function loginUser(credentials: any) {
 const Login = ({ setToken }) => {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [loginState, setLoginState] = useState("");
 
     let remindMe;
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        setLoginState("loading");
         const token = await loginUser({
             username,
             password
@@ -58,7 +60,10 @@ const Login = ({ setToken }) => {
                                   </span>
                                           <h3>Welcome!!</h3>
                                           <p>Log on to oneBudget here</p>
-                                          <br/>
+                                          <p>
+                                              { loginState === "loading"? "Loading " && <Spinner animation={"border"}/>: null}
+
+                                          </p>
                                           <Label>
                                               <UserNameInput onChange={e => setUserName(e.target.value)} type={"text"} placeholder={"Username"}/>
                                           </Label>
