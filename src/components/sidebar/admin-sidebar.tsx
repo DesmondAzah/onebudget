@@ -1,12 +1,10 @@
 import React, {useState} from "react";
 import SimpleBar from 'simplebar-react';
 import { CSSTransition } from 'react-transition-group';
-import {Link, Routes, useLocation} from "react-router-dom";
-import {Accordion, Badge, Button, Image, Nav, Navbar} from "react-bootstrap";
+import {Link, useLocation} from "react-router-dom";
+import { Button, Image, Nav, Navbar} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faChartPie, faHome,
-    faMoneyBillAlt,
+import { faHome,
     faSignOutAlt,
     faTimes
 } from "@fortawesome/free-solid-svg-icons";

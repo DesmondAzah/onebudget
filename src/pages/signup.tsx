@@ -8,12 +8,25 @@ import {
 import {NavLink} from "react-router-dom";
 import {Row, Col, Container, Button, Spinner} from "react-bootstrap";
 
+async function signup(payload: any) {
+    return  await fetch("https://unebudget.herokuapp.com/api/v1/account/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            username: payload.username,
+            password: payload.password,
+            email: payload.username,
+            fullName: payload.fullName
+        })
+    }).then(data => data.json()).catch(err => console.log('There has been a problem with your fetch operation:', err));
+}
 const Signup = () => {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [conPassword, setConfPassword] = useState("");
     const [fullName, setFullName] = useState("");
-    const [loginState, setLoginState] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
     const [loading, setLoading] = useState(false);
@@ -26,7 +39,18 @@ const Signup = () => {
             setLoading(false);
             return;
         }else {
-
+            const res = await signup({
+                username,
+                password,
+                fullName
+            });
+            if (res.status === 200) {
+                setSuccess("Account created successfully");
+                setLoading(false);
+            } else {
+                setError(res.message);
+                setLoading(false);
+            }
         }
 
     }
@@ -57,11 +81,11 @@ const Signup = () => {
                                         {loading ? (
                                             <Spinner style={{"color":"blueviolet"}} animation={"border"}/>
                                         ) : (
-                                            <span style={{"color":"red"}}>
+                                            <span >
                                                 {error ? (
-                                                    <span>{error}</span>
+                                                    <span style={{"color":"red"}}>{error}</span>
                                                 ) : (
-                                                    <span>{success}</span>
+                                                    <span style={{"color":"green"}}>{success}</span>
                                                 )}
                                             </span>
                                         )}
