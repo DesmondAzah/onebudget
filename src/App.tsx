@@ -29,7 +29,7 @@ function App() {
                         <Route path="/about-us" element={<About/>}/>
                         <Route path="/signup" element={<Signup/>}/>
                         <Route path="/forgot-password" element={<ForgotPassword/>}/>
-                        <Route path="/activate/:id" element={<ActivateAccount/>}/>
+                        <Route path="/activation/:id" element={<ActivateAccount/>}/>
                         <Route path="/login" element={<Login setToken={setToken}/>}/>
                     </Routes>
                 </header>
