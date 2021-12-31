@@ -19,11 +19,9 @@ const ActivateAccount = () => {
     const token = loc[loc.length - 1];
     let buffer = new Buffer(token, "base64");
     let decoded = buffer.toString("ascii");
-    console.log(token, decoded, loading, error, success);
     if(!loading && success === "" && error === "") {
         setLoading(true);
         activateUser( decoded).then((res) => {
-            console.log(res);
             if(res.status === 200) {
                 setSuccess(res.message+" ...redirecting to login page!!");
                 setLoading(false);
@@ -39,7 +37,7 @@ const ActivateAccount = () => {
         });
     }
     return (
-        <Row style={{marginTop:"250px"}}>
+        <Row style={{marginTop:"50%"}}>
             <Col lg={4} sm={12}></Col>
             <Col lg={4} sm={12}>
                 <p>
