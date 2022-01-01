@@ -30,9 +30,11 @@ const Signup = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
     const [loading, setLoading] = useState(false);
+    const [disable, setDisable] = useState(false);
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        setDisable(true);
         setLoading(true);
         if(conPassword !== password){
             setError("Passwords do not match");
@@ -45,11 +47,17 @@ const Signup = () => {
                 fullName
             });
             if (res.status === 200) {
-                setSuccess("Account created successfully");
+                setSuccess("Account created successfully check your email to verify your account!!");
                 setLoading(false);
+                setDisable(false);
+                setUserName("");
+                setPassword("");
+                setConfPassword("");
+                setFullName("");
             } else {
                 setError(res.message);
                 setLoading(false);
+                setDisable(false);
             }
         }
 
@@ -105,8 +113,8 @@ const Signup = () => {
                                     </Label>
                                     <br/>
                                     <div>
-                                        <Button variant="primary" type="submit">
-                                            Sign Up
+                                        <Button variant="primary" type="submit" disabled={disable}>
+                                            { disable ? "Loading..." : "Sign Up"}
                                         </Button>
                                     </div>
                                     <span style={{"margin":"10px"}}>Already  have an account?  <NavLink to={'/login'}>Log In </NavLink></span>

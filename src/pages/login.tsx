@@ -25,17 +25,21 @@ const Login = ({ setToken }) => {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [loginState, setLoginState] = useState("");
+    const [loading, setLoading] = useState(false);
 
     let remindMe;
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         setLoginState("loading");
+        setLoading(true);
         const token = await loginUser({
             username,
             password
         });
         setToken(token);
+        setLoginState("success");
+        setLoading(false);
         window.location.href = "/dashboard";
     }
     return (
@@ -79,8 +83,8 @@ const Login = ({ setToken }) => {
                                           </div>
                                           <br/>
                                           <div>
-                                              <Button variant="primary" type="submit">
-                                                  Sign In
+                                              <Button variant="primary" type="submit" disabled={loading}>
+                                                  { loading ? "Loading.. ": ""}
                                               </Button>
                                           </div>
                                           <span style={{"margin":"10px"}}>Don't have an account?  <NavLink to={'/signup'}>Sign Up</NavLink></span>

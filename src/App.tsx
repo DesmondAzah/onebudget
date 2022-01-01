@@ -15,6 +15,7 @@ import TransactionsReport from "./pages/transactions-report";
 import useToken from "./helper/use-token"
 import AdminNavbar from "./components/navbar/admin-navbar";
 import AdminSidebar from "./components/sidebar/admin-sidebar";
+import Reset from "./pages/rest-password";
 
 function App() {
     const { token, setToken } = useToken();
@@ -31,6 +32,7 @@ function App() {
                         <Route path="/forgot-password" element={<ForgotPassword/>}/>
                         <Route path="/activation/:id" element={<ActivateAccount/>}/>
                         <Route path="/login" element={<Login setToken={setToken}/>}/>
+                        <Route path={"/reset/:id"} element={<Reset/>}/>
                     </Routes>
                 </header>
             </Router>
