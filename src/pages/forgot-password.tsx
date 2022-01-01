@@ -22,11 +22,8 @@ const ForgotPassword = () => {
     const [loading, setLoading] = React.useState(false);
 
     function validateEmail(): boolean {
-        console.log(email);
-        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
-            return true;
-        }
-        return false;
+        return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
+
     }
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
