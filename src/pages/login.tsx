@@ -84,7 +84,7 @@ const Login = ({ setToken }) => {
                                           <br/>
                                           <div>
                                               <Button variant="primary" type="submit" disabled={loading}>
-                                                  { loading ? "Loading.. ": ""}
+                                                  { loading ? "Loading.. ": "Login"}
                                               </Button>
                                           </div>
                                           <span style={{"margin":"10px"}}>Don't have an account?  <NavLink to={'/signup'}>Sign Up</NavLink></span>

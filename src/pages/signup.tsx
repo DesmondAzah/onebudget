@@ -32,6 +32,11 @@ const Signup = () => {
     const [loading, setLoading] = useState(false);
     const [disable, setDisable] = useState(false);
 
+    function validateEmail(username: string) {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(username);
+    }
+
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         setDisable(true);
@@ -40,7 +45,12 @@ const Signup = () => {
             setError("Passwords do not match");
             setLoading(false);
             return;
-        }else {
+        }else if(!validateEmail(username)){
+            setError("Invalid email");
+            setLoading(false);
+            setDisable(false);
+            return;
+        } else {
             const res = await signup({
                 username,
                 password,

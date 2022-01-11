@@ -37,7 +37,7 @@ const ActivateAccount = () => {
         });
     }
     return (
-        <Row style={{marginTop:"50%"}}>
+        <Row style={{marginTop:"20%"}}>
             <Col lg={4} sm={12}></Col>
             <Col lg={4} sm={12}>
                 <p>
